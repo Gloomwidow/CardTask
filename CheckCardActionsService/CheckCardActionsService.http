@@ -1,0 +1,6 @@
+@CheckCardActionsService_HostAddress = http://localhost:5243
+
+GET {{CheckCardActionsService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
