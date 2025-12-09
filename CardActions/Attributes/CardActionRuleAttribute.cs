@@ -5,6 +5,10 @@ namespace CardActions.Attributes
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public abstract class CardActionRuleAttribute : Attribute
     {
-        public abstract bool IsCardSatysfyingRequirements(CardDetails details);
+        /// <summary>
+        /// Checks if card satisfies rules for the action connected to
+        /// If all rules for action return true, then the action is allowed for tested card
+        /// </summary>
+        public abstract bool IsCardSatisfyingRequirements(CardDetails details);
     }
 }

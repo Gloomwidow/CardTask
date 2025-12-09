@@ -19,7 +19,7 @@ namespace CardActions.Attributes
             this.CardStatuses = cardStatuses.Distinct().ToArray();
         }
 
-        public override bool IsCardSatysfyingRequirements(CardDetails details)
+        public override bool IsCardSatisfyingRequirements(CardDetails details)
         {
             switch (FilterType)
             {

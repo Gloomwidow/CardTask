@@ -9,7 +9,7 @@ namespace CardActions.Services
     {
         public Dictionary<string, CardActionRuleAttribute[]> ActionRules = PreloadActionRules();
 
-        public List<string> GetAllowedCardActionsNames(CardDetails details)
+        public IEnumerable<string> GetAllowedCardActionsNames(CardDetails details)
         {
             var result = new List<string>();
 
@@ -18,7 +18,7 @@ namespace CardActions.Services
                 bool isActionAllowed = true;
                 foreach (var rule in actionRules.Value)
                 {
-                    if (!rule.IsCardSatysfyingRequirements(details))
+                    if (!rule.IsCardSatisfyingRequirements(details))
                     {
                         isActionAllowed = false;
                         break;
@@ -49,6 +49,11 @@ namespace CardActions.Services
                 if (actionInstance == null)
                 {
                     throw new ArgumentNullException($"Could not cache {nameof(action)}");
+                }
+
+                if (result.ContainsKey(actionInstance.Name))
+                {
+                    throw new InvalidOperationException($"Duplicate of Card Action {actionInstance.Name} found!");
                 }
 
                 var filterAttributes = action.GetCustomAttributes(typeof(CardActionRuleAttribute), true);

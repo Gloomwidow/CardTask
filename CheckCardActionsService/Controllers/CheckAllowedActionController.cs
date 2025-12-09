@@ -1,11 +1,10 @@
 ﻿using CardActions.Services.Interfaces;
 using Cards.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CheckCardActionsService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cardActions")]
     [ApiController]
     public class CheckAllowedActionController : ControllerBase
     {
@@ -18,7 +17,7 @@ namespace CheckCardActionsService.Controllers
             this.cardActionsService = cardActionsService;
         }
 
-        [HttpGet("checkActions")]
+        [HttpGet("user/{userId}/card/{cardNumber}/allowed")]
         public async Task<IActionResult> GetAllowedActionsForCard(string userId, string cardNumber)
         {
             if (string.IsNullOrEmpty(userId))
@@ -46,7 +45,7 @@ namespace CheckCardActionsService.Controllers
 
             if (getCardDetailsTask.Result == null)
             {
-                return BadRequest($"Card with supplied details not found...");
+                return NotFound($"Card with supplied details not found...");
             }
 
             var allowedActionNames = cardActionsService.GetAllowedCardActionsNames(getCardDetailsTask.Result);

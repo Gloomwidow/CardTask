@@ -18,7 +18,7 @@ namespace CardActions.Attributes
             this.CardStatuses = cardStatuses;
         }
 
-        public override bool IsCardSatysfyingRequirements(CardDetails details)
+        public override bool IsCardSatisfyingRequirements(CardDetails details)
         {
             if (!CardStatuses.Contains(details.CardStatus))
             {

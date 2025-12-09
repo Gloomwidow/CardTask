@@ -4,6 +4,6 @@ namespace CardActions.Services.Interfaces
 {
     public interface ICardActionsService
     {
-        public List<string> GetAllowedCardActionsNames(CardDetails details);
+        public IEnumerable<string> GetAllowedCardActionsNames(CardDetails details);
     }
 }

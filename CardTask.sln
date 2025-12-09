@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36717.8 d17.14
+VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckCardActionsService", "CheckCardActionsService\CheckCardActionsService.csproj", "{D8192E78-D5F5-4801-996C-578B426E9DCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckCardActionsAPI", "CheckCardActionsService\CheckCardActionsAPI.csproj", "{D8192E78-D5F5-4801-996C-578B426E9DCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "CardDetails\Cards.csproj", "{295B82E8-5A01-4845-A1C5-027CB212A0E8}"
 EndProject
